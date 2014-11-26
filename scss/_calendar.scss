@@ -1,0 +1,96 @@
+.NLCalendar {
+
+  /* In order to be able to use it as a widget on any part of the site, the calendar will be responsive.
+   * Deleting the next line will make it take the full width of its container. 
+   */
+  max-width: 710px; /*If it's loaded on mobile, allow it to shrink down*/
+  border-top: 1px solid #FFF; /* Clearer way to avoid .calendar and .events margins collapsing */
+  font-size: 13px;
+  margin-bottom: 20px;
+
+  &:after{
+    content:'';
+    display: block;
+    clear: both;
+  }
+
+  .hours {
+
+    /* The hours column will have a fixed size, while the events column will use the rest of the space */
+    float: left;
+    width: 89px;
+    padding-right: 10px;
+
+    li {
+      height: 30px;
+      text-align: right;
+      color: $dark-gray;
+      font-weight: bold;
+    }
+
+    .half-hour, li .am-pm {
+      font-size: 0.8em;
+      color: $medium-gray;
+    }
+
+  }
+  
+  .eventsContainer{
+    border-left: 1px solid $light-gray;
+    background-color: $lighter-gray;
+    margin: 7px 0 0 89px;
+    padding: 0 10px;
+    
+    .events {
+      display: block;
+      position: relative;
+
+      .event {
+
+        position: absolute;
+        display: block;
+        border: 1px solid $light-gray;
+        background-color: #FFF;
+        padding: 10px 10px 10px 14px;
+        overflow: hidden;
+
+        &:before {
+          /*
+          * If we simply apply a blue border-left to .event, it may be (depending on the browser) rendered incorrectly as it
+          * overlaps with the top and bottom borders
+          */
+          content: '';
+          display: block;
+          border-left: 4px solid $blue-nl;
+          height: 100%;
+          margin-top: -1px;
+          padding-bottom: 2px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .title {
+          color: $blue-nl;
+        }
+
+        .location {
+          color: $dark-gray;
+          font-size: .8em;
+        }
+
+      }
+
+    }
+  }
+
+}
+
+/*
+ * Classes for "demo2"
+ */
+.big-calendar{
+  max-width: 100%;
+}
+.other-calendar{
+  max-width: 400px;
+}

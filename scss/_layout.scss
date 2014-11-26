@@ -1,0 +1,31 @@
+body {
+  padding: 0 10px;
+}
+
+header {
+  width: 100%;
+  border: 1px solid $dark-blue-nl;
+  border-radius: 0 0 4px 4px;
+  padding: 5px 9px;
+  background-color: $blue-nl;
+  margin-bottom: 50px;
+  font-family:  $font-family;
+  color: $blue-nl;
+
+  .nav{
+  	float: right;
+
+  	&:link, &:visited{
+  		color: #FFF;
+  		text-decoration: none;
+  		font-weight: bold;
+  	}
+  }
+
+}
+
+/* Only used in demo2.html */
+h1,h2,h3,h4,h5{
+	color: $dark-blue-nl; 
+	font-family: $font-family;
+}

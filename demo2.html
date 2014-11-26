@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Nazareno Lorenzo's Code Challenge</title>
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <a href="#">
+        Calendar
+      </a>
+      <a href="index.html" class="nav" role="navigation">Original requirement</a>
+    </header>
+    
+    <h1>It's responsive!</h1>
+    <h4>(And look at the extended hour range)</h4>
+    <section class="big-calendar">
+    </section><!-- /.big-calendar -->
+
+    <h1>Supports multiple separate calendars in one page!</h1>
+    <h4>(And works right on small sizes, too!)</h4>
+    <section class="other-calendar">
+    </section><!-- /.big-calendar -->
+  
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      /*
+      * Apply it to a block and lay out some events
+      */
+      var bigcalendar = $(".big-calendar").NLCalendar({startHour:7, endHour:23});
+      var othercalendar = $(".other-calendar").NLCalendar({startHour:13, endHour:19});
+
+      ///Replace the layOutDay function for this demo
+      layOutDay = function(events){
+        bigcalendar.renderEvents(events);
+        othercalendar.renderEvents(events);
+      }
+      //Fill with sample data
+      layOutDay([{start: 30, end: 150},{start: 180, end: 240},{start: 200, end: 270},{start: 280, end: 310}]);
+    </script>
+  </body>
+</html>
